@@ -3,12 +3,12 @@
 NAME="$1"
 
 if [ -z "$NAME" ]; then
-	echo "Использование: new-project.sh имя_проекта"
+	echo "Using: new-project.sh project_name"
 	exit 1
 fi
 
 if [ -e "$NAME" ]; then
-	echo "Папка $NAME уже существует"
+	echo "The forled $NAME is already exists"
 	exit 1
 fi
 
@@ -24,3 +24,13 @@ __pycache__/
 EOF
 
 echo "# $NAME" > "$NAME/README.md"
+
+cd "$NAME" || exit 1
+
+git init -q
+
+git add .
+
+git commit -m "Initial project structure" -q
+
+echo "The project $NAME is ready to work"
