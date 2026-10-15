@@ -15,3 +15,12 @@ fi
 mkdir -p "$NAME/src" "$NAME/tests" "$NAME/docs"
 
 touch "$NAME/src/main.py" "$NAME/tests/test_main.py" "$NAME/docs/.gitkeep"
+
+cat > "$NAME/.gitignore" << 'EOF'
+.venv/
+__pycache__/
+*.pyc
+.env
+EOF
+
+echo "# $NAME" > "$NAME/README.md"
