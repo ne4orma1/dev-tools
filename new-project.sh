@@ -3,12 +3,12 @@
 NAME="$1"
 
 if [ -z "$NAME" ]; then
-	echo "Using: new-project.sh project_name"
+	echo "Usage: new-project.sh project_name"
 	exit 1
 fi
 
 if [ -e "$NAME" ]; then
-	echo "The forled $NAME is already exists"
+	echo "The folder $NAME already exists"
 	exit 1
 fi
 
